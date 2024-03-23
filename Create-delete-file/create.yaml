@@ -10,3 +10,9 @@
     file:
       path: /home/ec2-user/sampledir
       state: directory
+
+  - name: copy file within target VM one location to other
+      copy:
+        src: /home/ec2-user/hello.txt
+        dest: /home/ec2-user/sampledir/hello.txt
+        remote_src: yes
