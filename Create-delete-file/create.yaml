@@ -1,0 +1,11 @@
+- hosts: centos
+  tasks:
+  - name: Create file on target machine
+    file:
+      path: /home/ec2-user/sample.txt
+      state: touch
+
+  - name: create a dir
+    file:
+      path: /home/ec2-user/sampledir
+      state: directory
