@@ -1,3 +1,4 @@
+# syntax to create file and folder
 - hosts: centos
   tasks:
   - name: Create file on target machine
