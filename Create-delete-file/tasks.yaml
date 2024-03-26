@@ -1,0 +1,17 @@
+- hosts: centos
+  become: true
+  become_method: sudo
+  tasks:
+
+  - name: generate a report
+    shell: rpm -qa --last \grep "Mon 25 Mar 2024" >/home/ec2-user/report.txt
+
+  - name: stop/start service
+    service:
+      name: httpd
+      state: started
+
+  - name: fetch report
+    fetch:
+      src: /home/ec2-user/report.txt
+      dest: /home/ec2-user
