@@ -3,6 +3,11 @@
   become_method: sudo
   tasks:
 
+  - name: install/update packages
+    yum:
+      name: httpd
+      state: present  
+
   - name: generate a report
     shell: rpm -qa --last \grep "Mon 25 Mar 2024" >/home/ec2-user/report.txt
 
