@@ -9,7 +9,7 @@ sudo apt install ansible  :- To install ansible on ubuntu
 ansible centos -m ping    :- To check target machine reaching or not.
 ````
 
-**Build communication on two servers/VM's** 
+**Build communication between two servers/VM's** 
 ````
 ll -a /home/ec2-user/.ssh   :- To find .ssh folder
 ssh-keygen -t rsa           :- To generate or create ssh keys
@@ -22,13 +22,31 @@ sudo nano .ssh/authorized_keys     :- Do it in target VM and past id_rsa.pub fil
 ansible centos -m ping             :- To check target machine reaching or not on ansible server
 ````
 
+cd /etc/ansible   :- It is a default path of ansible.
 
-cd /etc/ansible   :- It is a default path of ansible
-Create **hosts** file to store IP address and [name of Operating Systems] Ex:- ubuntu, centeos
-Create a **Playbooks** directory. Then, start writing a files and execute them.
+Create **hosts** file to store IP address and [name of Operating Systems] Ex:- ubuntu, centeos.
 
-Playbook files are written in a .YAML files
+Create a **Playbooks** directory. Then, start writing a files and execute them. ex:- nginx.yaml, tasks.yaml creat.yaml and etc.
+
+Playbook files are written in a .YAML files. Use **sudo** to edit the files.
 
 ansible-playbook <file name> --syntax-check   :- to check sntax is correct or error
 
 ansible-playbook <file name>   :- To execute yaml file.
+
+**Ansible adhoc Command**
+````
+Ad hoc commands are one-off commands that are executed on the command line of an Ansible control node,
+without the need for a playbook or any additional configuration.
+These commands are used to quickly perform tasks on one or more managed nodes,
+such as checking the status of a service or installing a package.
+
+ansible -i hosts <ipadress> -m "shell" -a "touch <file>" :- To create file in target machine
+ansible -i hosts <ipadress> -m "shell" -a "ls -la" :- To list all files and folders in target VM
+````
+# Ansible-galaxy Command
+Jump-start your automation project with great content from the Ansible community. Galaxy provides pre-packaged units of workflows. such as roles and collections.
+ It includes multiple playbooks, roles, modules and plugins.
+
+
+
