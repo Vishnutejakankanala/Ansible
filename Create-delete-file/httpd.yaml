@@ -1,0 +1,31 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+    - name: install apache httpd
+      ansible.builtin.yum:
+        name: httpd
+        state: present
+        update_cache: yes
+
+    - name: start and enable httpd
+      ansible.builtin.systemd:
+        name: httpd
+        state: started
+        enabled: true
+
+    - name: copy file with owner and permistion
+      ansible.builtin.copy:
+        src: /home/ec2-user/index.html
+        dest: /var/www/html
+        owner: root
+        group: root
+        mode: '0644'
+
+
+# ansible-playbook --syntax-check <yaml file name> : to check syntax is correct or not
+# ansible-playbook <yaml file name>: To excute file
+# systemctl status httpd: To check status of application
+# go to aws console give security group -> inbound traffic rule -> http and allow all ipv4.
+# copy instance id and past in any browser to check running the app.
