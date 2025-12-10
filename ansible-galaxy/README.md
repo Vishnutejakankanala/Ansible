@@ -16,3 +16,6 @@ ansible-playbook docker-playbook.yaml : To execute yaml file
 
 in the target VM docker will install
 use "Docker" command to check
+
+# adding roles to ansible
+ansible-galaxy role init httpd : to create httpd role 
