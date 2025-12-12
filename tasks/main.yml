@@ -1,0 +1,20 @@
+---
+# tasks file for httpd
+
+- name: install apache httpd
+  ansible.builtin.yum:
+    name: httpd
+    state: present
+    update_cache: yes
+- name: start and enable httpd
+  ansible.builtin.systemd:
+    name: httpd
+    state: started
+    enabled: true
+- name: copy file with owner and permistion
+  ansible.builtin.copy:
+    src: /home/ec2-user/index.html
+    dest: /var/www/html
+    owner: root
+    group: root
+    mode: '0644'
