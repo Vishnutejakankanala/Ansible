@@ -33,9 +33,9 @@ sudo git push -u origin main : to push to github
 ansible-galaxy import Vishnutejakankanala Ansible -token <ansible-galaxy token in website> : To get import request & repo will create in ansible-galaxy roles in website
 ```
 
->>> git token : 
->>sudo git branch : To check you are in which branch
->>sudo git branch -a : To check how many branches are available in local and remote
+git token :  
+sudo git branch : To check you are in which branch.  
+sudo git branch -a : To check how many branches are available in local and remote.
 
 
 
