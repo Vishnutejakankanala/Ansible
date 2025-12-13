@@ -1,4 +1,4 @@
-ansible-galaxy role install bsmeding.swag_docker : command used to pull and install roles form ansible galaxy website
+ansible-galaxy role install bsmeding.swag_docker : command used to pull and install roles form ansible galaxy website  
 ll ~/.ansible/roles/  : To check the installed roles 
 
 # write a file docker-playbook.yaml to install docker in target VM
@@ -10,11 +10,11 @@ ll ~/.ansible/roles/  : To check the installed roles
     - bsmeding.swag_docker
 ```
 
-run commands
-ansible-playbook --syntaxc-check docker-playbook.yaml : To check yaml file is correct or not
-ansible-playbook docker-playbook.yaml : To execute yaml file
+run commands  
+ansible-playbook --syntaxc-check docker-playbook.yaml : To check yaml file is correct or not  
+ansible-playbook docker-playbook.yaml : To execute yaml file  
 
-in the target VM docker will install
+in the target VM docker will install  
 use "Docker" command to check
 
 # adding roles to ansible
