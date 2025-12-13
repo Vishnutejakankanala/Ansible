@@ -34,8 +34,8 @@ ansible-galaxy import Vishnutejakankanala Ansible -token <ansible-galaxy token i
 ```
 
 >>> git token : 
->>> sudo git branch : To check you are in which branch
->>> sudo git branch -a : To check how many branches are available in local and remote
+>>sudo git branch : To check you are in which branch
+>>sudo git branch -a : To check how many branches are available in local and remote
 
 
 
